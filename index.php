@@ -15,5 +15,10 @@
     $control->viewHome();
  });
  
+ $f3->route('GET /about', function($f3, $params) {
+    $control = new QuizAboutControl($f3, $params);
+    $control->viewAbout();
+ });
+ 
  $f3->run();
 ?>
