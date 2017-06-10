@@ -1,0 +1,41 @@
+CREATE TABLE Quizzes (
+    quiz_id INT(3) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    quiz_name VARCHAR(100) NOT NULL,
+    num_of_questions INT(2) NOT NULL
+);
+
+CREATE TABLE Questions (
+    question_id INT(3) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    question VARCHAR(100) NOT NULL,
+    answer_one VARCHAR(50) NOT NULL,
+    answer_two VARCHAR(50) NOT NULL,
+    answer_three VARCHAR(50),
+    answer_four VARCHAR(50),
+    from_quiz_with_id INT NOT NULL,
+    CONSTRAINT Quizzes_quiz_id_fk
+    FOREIGN KEY (from_quiz_with_id)
+    REFERENCES Quizzes (quiz_id)
+);
+
+CREATE TABLE QuizUsers (
+    user_id INT(3) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL,
+    password VARCHAR(100) NOT NULL
+);
+
+INSERT INTO Quizzes (quiz_name, num_of_questions)
+VALUES ("Mini Quiz 1", 4), ("True/False 1", 4);
+
+INSERT INTO Questions (question, answer_one, answer_two, 
+answer_three, answer_four, correct_answer, from_quiz_with_id) VALUES
+("How many continents are there in the world?", "7", "6", "4", "5", "7", "1"),
+("How many stripes are on the U.S. flag?", "12", "13", "14", "15", "13", "1"),
+("What is the chemical formula for water?", "O2", "CO2", "NaCl", "H2O", "H2O", "1"),
+("Which of these animals is not a mammal?", "Cat", "Giraffe", "Ostrich", "Platypus", "Ostrich", "1");
+
+INSERT INTO Questions (question, answer_one, answer_two, 
+correct_answer, from_quiz_with_id) VALUES
+("Most elephants are grey.", "True", "False", "True", "2"),
+("2 times 2 equals 2 minus 2.", "True", "False", "False", "2"),
+("The Earth is 17% water.", "True", "False", "False", "2"),
+("Tina is a pretty good teacher.", "True", "False", "False", "2");
