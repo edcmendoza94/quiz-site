@@ -1,0 +1,15 @@
+{
+    "name": "emendoza5/quiz-site",
+    "authors": [
+        {
+            "name": "Edward Mendoza",
+            "email": "emendoza5@mail.greenriver.edu"
+        }
+    ],
+    "require":{
+        "bcosca/fatfree-core": "dev-master"
+    },
+    "autoload":{
+        "classmap": ["model/", "controller/", "classes/"]
+    }
+}
