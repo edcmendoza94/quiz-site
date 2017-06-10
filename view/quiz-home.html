@@ -20,6 +20,19 @@
 <link rel="shortcut icon" href="">
 </head>
 <body>
-WHAT ARE YE DOIN' IN ME SWAMP?
+    <div class="col-xs-12">
+        <loop from="{{ @i=0 }}" to="{{ @i < @numOfQuizzes }}" step="{{ @i++ }}">
+            <div class="panel panel-default col-xs-3">
+                <div class="panel panel-body">
+                    <p>{{ @quizzes[@i]->getQuizName() }}</p>
+                    <hr>
+                    Number of Questions: {{ @quizzes[@i]->getNumOfQuestions() }}
+                    <br>
+                    <br>
+                    <a href="#">Take This Quiz</a>
+                </div>
+            </div>
+        </loop>
+    </div>
 </body>
 </html>
