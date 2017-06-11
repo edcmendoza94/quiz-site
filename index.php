@@ -20,5 +20,10 @@
     $control->viewAbout();
  });
  
+ $f3->route('GET /login', function($f3, $params){
+    $control = new QuizLoginControl($f3, $params);
+    $control->viewLogin();
+ });
+ 
  $f3->run();
 ?>

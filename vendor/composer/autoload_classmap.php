@@ -37,6 +37,7 @@ return array(
     'Quiz' => $baseDir . '/classes/quiz.php',
     'QuizAboutControl' => $baseDir . '/controller/quiz-about-control.php',
     'QuizHomeControl' => $baseDir . '/controller/quiz-home-control.php',
+    'QuizLoginControl' => $baseDir . '/controller/quiz-login-control.php',
     'QuizSiteDB' => $baseDir . '/model/quiz-site-db.php',
     'QuizUser' => $baseDir . '/classes/quiz-user.php',
     'Registry' => $vendorDir . '/bcosca/fatfree-core/base.php',

@@ -38,6 +38,7 @@ class ComposerStaticInit2dc1a46deb79846057f13910f104a98d
         'Quiz' => __DIR__ . '/../..' . '/classes/quiz.php',
         'QuizAboutControl' => __DIR__ . '/../..' . '/controller/quiz-about-control.php',
         'QuizHomeControl' => __DIR__ . '/../..' . '/controller/quiz-home-control.php',
+        'QuizLoginControl' => __DIR__ . '/../..' . '/controller/quiz-login-control.php',
         'QuizSiteDB' => __DIR__ . '/../..' . '/model/quiz-site-db.php',
         'QuizUser' => __DIR__ . '/../..' . '/classes/quiz-user.php',
         'Registry' => __DIR__ . '/..' . '/bcosca/fatfree-core/base.php',

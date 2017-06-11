@@ -1,8 +1,8 @@
 <?php
 /**
  * Quiz site class file that talks with
- * the database tables "Quizzes" and
- * "Questions"
+ * the database tables "Quizzes",
+ * "Questions", and "QuizUsers"
  *
  * @author Edward Mendoza <edcmendoza94@gmail.com>
  * @copyright 2017
