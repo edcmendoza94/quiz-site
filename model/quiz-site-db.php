@@ -41,5 +41,20 @@ class QuizSiteDB
         
         return $result;
     }
+    
+    function getQuestionsFromQuizIDNum($quizID)
+    {
+        $select = "SELECT * FROM Questions WHERE from_quiz_with_id = :quiz_id";
+        
+        $statement = $this->_pdo->prepare($select);
+        
+        $statement->bindParam(':quiz_id', $quizID, PDO::PARAM_INT);
+        
+        $statement->execute();
+        
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        
+        return $result;
+    }
 }
 ?>

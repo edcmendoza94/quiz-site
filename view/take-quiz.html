@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8">
+<title></title>
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="">
+<!-- bootstrap -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!--[if lt IE 9]>
+<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="col-xs-12">
+    <loop from="{{ @i=0 }}" to="{{ @i<@numOfQuestions }}" step="{{ @i++ }}">
+        <div class="panel panel-default col-xs-6">
+            <div class="panel panel-body">
+                <p>{{ @questions[@i]->getQuestion() }}</p>
+                <hr>
+                <input type="radio" name="question{{ @i + 1 }}"
+                       id="{{ @questions[@i]->getAnswerOne() }}"
+                       value="{{ @questions[@i]->getAnswerOne() }}">
+                <label for="{{ @questions[@i]->getAnswerOne() }}">
+                    {{ @questions[@i]->getAnswerOne() }}
+                </label>
+                <br>
+                <input type="radio" name="question{{ @i + 1 }}"
+                       id="{{ @questions[@i]->getAnswerTwo() }}"
+                       value="{{ @questions[@i]->getAnswerTwo() }}">
+                <label for="{{ @questions[@i]->getAnswerTwo() }}">
+                    {{ @questions[@i]->getAnswerTwo() }}
+                </label>
+                <br>
+                <check if="{{ @questions[@i]->getAnswerThree() }}"
+                    <true>
+                        <label for="{{ @questions[@i]->getAnswerThree() }}">
+                            <input type="radio" name="question{{ @i + 1 }}"
+                                   id="{{ @questions[@i]->getAnswerThree() }}"
+                                   value="{{ @questions[@i]->getAnswerThree() }}">
+                            <b>{{ @questions[@i]->getAnswerThree() }}</b>
+                        </label>    
+                        <br>
+                    </true>
+                    <false></false>
+                </check>
+                <check if="{{@questions[@i]->getAnswerFour()}}"
+                    <true>
+                        <label for="{{ @questions[@i]->getAnswerFour() }}">
+                            <input type="radio" name="question{{ @i + 1 }}"
+                                   id="{{ @questions[@i]->getAnswerFour() }}"
+                                   value="{{ @questions[@i]->getAnswerFour() }}">
+                            <b>{{ @questions[@i]->getAnswerFour() }}</b>
+                        </label>
+                    </true>
+                    <false></false>
+                </check>
+            </div>
+        </div>
+    </loop>
+    
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4">
+        <div class="btn btn-primary">
+            Submit
+        </div>
+    </div>
+    <div class="col-xs-4"></div>
+</div>
+</body>
+</html>

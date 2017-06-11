@@ -25,5 +25,10 @@
     $control->viewLogin();
  });
  
+ $f3->route('GET /take-quiz/@id', function($f3, $params){
+    $control = new TakeQuizControl($f3, $params);
+    $control->viewQuizForm();
+ });
+ 
  $f3->run();
 ?>

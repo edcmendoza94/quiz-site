@@ -29,7 +29,9 @@
                     Number of Questions: {{ @quizzes[@i]->getNumOfQuestions() }}
                     <br>
                     <br>
-                    <a href="#">Take This Quiz</a>
+                    <a href="{{@BASE}}/take-quiz/{{ @quizzes[@i]->getQuizID() }}">
+                        Take This Quiz
+                    </a>
                 </div>
             </div>
         </loop>

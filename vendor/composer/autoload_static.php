@@ -44,6 +44,7 @@ class ComposerStaticInit2dc1a46deb79846057f13910f104a98d
         'Registry' => __DIR__ . '/..' . '/bcosca/fatfree-core/base.php',
         'SMTP' => __DIR__ . '/..' . '/bcosca/fatfree-core/smtp.php',
         'Session' => __DIR__ . '/..' . '/bcosca/fatfree-core/session.php',
+        'TakeQuizControl' => __DIR__ . '/../..' . '/controller/take-quiz-control.php',
         'Template' => __DIR__ . '/..' . '/bcosca/fatfree-core/template.php',
         'Test' => __DIR__ . '/..' . '/bcosca/fatfree-core/test.php',
         'UTF' => __DIR__ . '/..' . '/bcosca/fatfree-core/utf.php',
